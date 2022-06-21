@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="logo">
+        <img src="imagens/Vector.png" alt="logo">
+    </div>
+    <textarea placeholder="Digite um texto..." name="texto" id="textEntra" cols="30" rows="10" ></textarea>
+    <div id="aviso">
+        <img id="excla" src="imagens/sinal-de-aviso.png" alt="">
+        <p id="letras">Apenas letras minúsculas e sem acento</p>
+        
+    </div>
+    <div id="botao">
+        <button id="botao1" onclick="criptografar()"> Criptografar </button>
+        <button id="botao2" onclick="descriptografar()">Descriptografar</button>
+    </div>
+    <section id="res">
+        <div id="img">
+            <img id="lupa" src="imagens/High quality products 1 1.svg" alt="">
+        </div>
+        <div id="textRes">
+            <p id="pNada">Nenhuma mensagem encontrada</p>
+            <p id="pDigite">Digite um texto que você gostaria de Criptografar ou Descriptografar</p>
+        </div>
+    </section>
+
+<script>
+    var texto = document.querySelector("textarea#textEntra");
+    var res = document.querySelector("div#img");
+    var ressec = document.querySelector("div#textRes");
+    var mudaVogal = {
+        a:"ai", e: "enter", i:"imes", o: "ober", u: "ufat"
+    };
+    var vogalMuda = {
+        ai: "a", enter: "e", imes: "i", ober: "o", ufat: "u"
+    };
+
+    
+
+    
+    function criptografar(){
+        if(texto.value == 0){
+            alert("Digite um texto que você gostaria de Criptografar ou Descriptografar")
+        }else{
+             res.innerHTML = (texto.value.toLowerCase().replace(/a|e|i|o|u/g, function(matched){
+                return mudaVogal[matched]
+             }));
+             var newButt = document.createElement("button");
+             newButt.innerHTML = ("Copiar")
+             ressec.innerHTML = ("");
+             ressec.appendChild(newButt);
+             function editButt() {
+                newButt.style.width = "280px"
+                newButt.style.height = "50px"
+                newButt.style.color = "#0a3871"
+                newButt.style.fontSize = "20px"
+                newButt.style.fontWeight = "400"
+                newButt.style.background = "white"
+                newButt.style.borderColor = "#0a3871"
+                newButt.style.borderRadius = "24px"
+            } editButt()
+             newButt.addEventListener("click", copiar)
+             async function copiar(){
+                var resultado = res.innerHTML
+                await navigator.clipboard.writeText(resultado);
+                newButt.innerHTML = ("Copiado")
+                newButt.style.borderColor = "green"
+                newButt.style.color = "green"
+             }
+
+        }
+       
+    }
+    function descriptografar(){
+        if(texto.value == 0){
+            alert("Digite um texto que você gostaria de Criptografar ou Descriptografar")
+        }else{
+            res.innerHTML = (texto.value.toLowerCase().replace(/ai|enter|imes|ober|ufat/g, function(matched){
+                return vogalMuda [matched]
+            }));
+            var newButt = document.createElement("button");
+            newButt.innerHTML = ("copiar");
+            ressec.innerHTML = ("");
+            ressec.appendChild(newButt);
+            function editButt() {
+                newButt.style.width = "280px"
+                newButt.style.height = "50px"
+                newButt.style.color = "#0a3871"
+                newButt.style.fontSize = "20px"
+                newButt.style.fontWeight = "400"
+                newButt.style.background = "white"
+                newButt.style.borderColor = "#0a3871"
+                newButt.style.borderRadius = "24px"
+            } editButt()
+            newButt.addEventListener("click", copiar)
+             async function copiar(){
+                var resultado = res.innerHTML
+                await navigator.clipboard.writeText(resultado);
+                newButt.innerHTML = ("Copiado")
+                newButt.style.borderColor = "green"
+                newButt.style.color = "green"
+             }
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    position: relative;
+    background-color: #F3F5FC;
+}
+div#logo{
+    width: 120px;
+    height: 48px;
+}
+img{
+    width: 31px;
+    height: 48px;
+    position: relative;
+    top: 25px;
+    left: 40px;
+}
+textarea{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    top: 115px;
+    left: 240px;
+    border: none;
+    background-color: #F3F5FC;
+
+    font-family: "arial";
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+    color: #0A3871;
+}
+textarea::placeholder{
+    color: #0A3871;
+}
+div#aviso{
+    width: 400px;
+    height: 20px;
+    position: absolute;
+    top: 500px;
+    left: 200px;
+}
+img#excla{
+    width: 20px;
+    height: 20px;
+}
+p#letras{
+    font: normal 15px arial;
+    position: relative;
+    top: 3px;
+    left: 65px;
+}
+div#botao{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    position: absolute;
+    width: 530px;
+    height: 55px;
+    left: 240px;
+    top: 565px;
+}
+button#botao1{
+    background-color: #0A3871;
+    width: 328px;
+    height: 55px;
+    border-radius: 24px;
+
+    font-family: "arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 19px;
+    color: white;
+
+    cursor: pointer;
+}
+button#botao2{
+    background-color: #F3F5FC;
+    width: 328px;
+    height: 55px;
+    border-radius: 24px;
+    border-color: #0A3871;
+
+    font-family: "arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 19px;
+    color: #0A3871;
+
+    cursor: pointer;
+}
+section{
+    position: absolute;
+    width: 320px;
+    height: 590px;
+    left: 980px;
+    top: 25px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.274);
+    border-radius: 32px;
+}
+div#img{
+    position: relative;
+    margin: 20px;
+    top: 25px;
+    left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(34, 76, 194);
+}
+img#lupa{
+    width: 320px;
+    height: 230px;
+    position: relative;
+    top: 95px;
+    left: -20px;
+}
+div#textRes{
+    position: absolute;
+    top: 525px;
+    left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p#pNada{
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #072852;
+    position: relative;
+    top: -110px;
+    right: 10px;
+}
+p#pDigite{
+    text-align: center;
+    color: #0a3871;
+    position: relative;
+    top: -115px;
+    right: 10px;
+}
